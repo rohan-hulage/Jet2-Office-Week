@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jet2 Office Week | Memories</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;500;700&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Hero Section -->
@@ -24,12 +28,39 @@
         <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; color: var(--text-light);">
             Five days of collaboration, laughter, and building the future together at Jet2.
         </p>
-        
-        <div class="scroll-indicator" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">
+
+        <div class="scroll-indicator"
+            onclick="document.getElementById('spotlight').scrollIntoView({behavior: 'smooth'})">
             <div class="mouse">
                 <div class="wheel"></div>
             </div>
             <span>Scroll to Explore</span>
+        </div>
+    </section>
+
+    <!-- Spotlight Section (Photo of the Week) -->
+    <section id="spotlight" class="spotlight-section">
+        <div class="spotlight-text">
+            <div class="spotlight-badge">🏆 Photo of the Week</div>
+            <h2 class="section-title">The Ultimate Hug</h2>
+            <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 25px;">
+                Nothing says "team bonding" quite like this. The energy, the joy, the sheer enthusiasm—this moment
+                captures the spirit of our week perfectly.
+            </p>
+            <button class="celebrate-btn" id="celebrateBtn">
+                <i class="fa-solid fa-heart"></i> Send Some Love
+            </button>
+        </div>
+
+        <div class="polaroid-frame">
+            <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/photo_of_the_week_hug_1771172280000.png"
+                alt="Photo of the Week" id="spotlightImg">
+            <div class="polaroid-caption">Best. Week. Ever.</div>
+            <!-- Sticker Decoration -->
+            <div
+                style="position: absolute; top: -15px; right: -15px; background: #ffeb3b; color: #333; padding: 5px 10px; border-radius: 50%; font-weight: bold; transform: rotate(15deg); box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                #Vibe100
+            </div>
         </div>
     </section>
 
@@ -43,7 +74,8 @@
         <div class="bento-grid">
             <!-- Large Item -->
             <div class="bento-item large">
-                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_lounge_1771171853277.png" alt="Office Lounge" class="bento-img">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_lounge_1771171853277.png"
+                    alt="Office Lounge" class="bento-img">
                 <div class="bento-overlay">
                     <h3>The Chill Zone</h3>
                     <p>Where ideas happened over coffee.</p>
@@ -52,7 +84,8 @@
 
             <!-- Standard Item -->
             <div class="bento-item">
-                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/team_collaboration_1771171866785.png" alt="Team Work" class="bento-img">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/team_collaboration_1771171866785.png"
+                    alt="Team Work" class="bento-img">
                 <div class="bento-overlay">
                     <h3>Collaboration</h3>
                     <p>Brainstorming sessions.</p>
@@ -61,16 +94,18 @@
 
             <!-- Tall Item -->
             <div class="bento-item tall">
-                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_mural_1771171883442.png" alt="Mural Art" class="bento-img">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_mural_1771171883442.png"
+                    alt="Mural Art" class="bento-img">
                 <div class="bento-overlay">
                     <h3>Inspiration</h3>
                     <p>Travel is my life.</p>
                 </div>
             </div>
 
-             <!-- Placeholder for missing 4th image, reusing one for layout balance -->
-             <div class="bento-item">
-                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/team_collaboration_1771171866785.png" alt="Happy Team" class="bento-img" style="filter: hue-rotate(45deg);">
+            <!-- Placeholder for missing 4th image, reusing one for layout balance -->
+            <div class="bento-item">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/team_collaboration_1771171866785.png"
+                    alt="Happy Team" class="bento-img" style="filter: hue-rotate(45deg);">
                 <div class="bento-overlay">
                     <h3>Team Spirit</h3>
                     <p>Smiles all around.</p>
@@ -79,7 +114,8 @@
 
             <!-- Wide Item -->
             <div class="bento-item wide">
-                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_lounge_1771171853277.png" alt="Group Shot" class="bento-img" style="object-position: bottom;">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_lounge_1771171853277.png"
+                    alt="Group Shot" class="bento-img" style="object-position: bottom;">
                 <div class="bento-overlay">
                     <h3>All Together</h3>
                     <p>The whole squad.</p>
@@ -122,4 +158,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

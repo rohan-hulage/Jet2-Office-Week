@@ -27,7 +27,9 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
@@ -138,7 +140,8 @@ h1, h2, h3 {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-rows: masonry; /* If supported or controlled by JS, else uniform */
+    grid-template-rows: masonry;
+    /* If supported or controlled by JS, else uniform */
     gap: 24px;
     grid-auto-flow: dense;
 }
@@ -191,7 +194,7 @@ h1, h2, h3 {
     left: 0;
     width: 100%;
     padding: 24px;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     color: white;
     opacity: 0;
     transform: translateY(20px);
@@ -242,6 +245,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -249,13 +253,25 @@ footer {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes scrollWheel {
-    0% { top: 8px; opacity: 1; }
-    100% { top: 24px; opacity: 0; }
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 24px;
+        opacity: 0;
+    }
 }
 
 /* --- Responsive --- */
@@ -263,9 +279,147 @@ footer {
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .bento-item.large,
     .bento-item.wide {
         grid-column: span 1;
+    }
+
+    .photo-spotlight {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- Fun Features --- */
+
+/* Photo of the Week Section */
+.spotlight-section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.spotlight-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.spotlight-badge {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+    animation: bounce 2s infinite;
+}
+
+.polaroid-frame {
+    flex: 1;
+    max-width: 450px;
+    background: white;
+    padding: 20px 20px 80px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: rotate(-3deg);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.polaroid-frame:hover {
+    transform: rotate(0) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.polaroid-frame img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1/1;
+    /* Square for classic polaroid look */
+    object-fit: cover;
+    filter: sepia(0.1) contrast(1.1);
+    /* Slight vintage feel */
+}
+
+.polaroid-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    /* Handwritten font if available, fallback to cursive */
+    font-size: 1.5rem;
+    color: #444;
+    transform: rotate(-1deg);
+}
+
+.celebrate-btn {
+    background: var(--primary-mint);
+    color: var(--text-dark);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(152, 255, 179, 0.5);
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.celebrate-btn:active {
+    transform: scale(0.95);
+}
+
+.celebrate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(152, 255, 179, 0.6);
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    animation: fall linear forwards;
+    z-index: 9999;
+    top: -10px;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
     }
 }
