@@ -73,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
             confetti.style.width = size + 'px';
             confetti.style.height = size + 'px';
             confetti.style.animationDuration = animDuration + 's';
+            confetti.style.zIndex = '9999'; // Ensure it's on top
 
             // Shapes (Square or Circle)
             if (Math.random() > 0.5) confetti.style.borderRadius = '50%';
