@@ -88,12 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Voting Logic ---
+    // Using '_v1' suffix to ensure fresh start (0 votes) for everyone
     let votes = {
-        liverpool: parseInt(localStorage.getItem('vote_liverpool')) || 0,
-        manchester: parseInt(localStorage.getItem('vote_manchester')) || 0
+        liverpool: parseInt(localStorage.getItem('vote_liverpool_v1')) || 0,
+        manchester: parseInt(localStorage.getItem('vote_manchester_v1')) || 0
     };
 
-    let hasVoted = localStorage.getItem('hasVoted') === 'true';
+    let hasVoted = localStorage.getItem('hasVoted_v1') === 'true';
 
     function updateVoteUI() {
         // Update text
@@ -134,8 +135,8 @@ document.addEventListener('DOMContentLoaded', () => {
         votes[team]++;
         hasVoted = true;
 
-        localStorage.setItem('vote_' + team, votes[team]);
-        localStorage.setItem('hasVoted', 'true');
+        localStorage.setItem('vote_' + team + '_v1', votes[team]);
+        localStorage.setItem('hasVoted_v1', 'true');
 
         updateVoteUI();
 
