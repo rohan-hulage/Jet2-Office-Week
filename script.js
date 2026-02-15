@@ -89,9 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Voting Logic ---
     let votes = {
-        liverpool: parseInt(localStorage.getItem('vote_liverpool')) || 120, // Starting with some example votes for fun
-        manchester: parseInt(localStorage.getItem('vote_manchester')) || 115
+        liverpool: parseInt(localStorage.getItem('vote_liverpool')) || 0,
+        manchester: parseInt(localStorage.getItem('vote_manchester')) || 0
     };
+
+    let hasVoted = localStorage.getItem('hasVoted') === 'true';
 
     function updateVoteUI() {
         // Update text
@@ -103,8 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update progress bars
         const total = votes.liverpool + votes.manchester;
-        const liverpoolPct = (votes.liverpool / total) * 100;
-        const manchesterPct = (votes.manchester / total) * 100;
+        // Avoid NaN if total is 0
+        const liverpoolPct = total === 0 ? 50 : (votes.liverpool / total) * 100;
+        const manchesterPct = total === 0 ? 50 : (votes.manchester / total) * 100;
 
         const barLiverpool = document.getElementById('bar-liverpool');
         const barManchester = document.getElementById('bar-manchester');
@@ -113,22 +116,41 @@ document.addEventListener('DOMContentLoaded', () => {
             barLiverpool.style.width = liverpoolPct + '%';
             barManchester.style.width = manchesterPct + '%';
         }
+
+        // Disable UI if voted
+        if (hasVoted) {
+            document.querySelectorAll('.vote-card').forEach(card => {
+                card.style.opacity = '0.6';
+                card.style.cursor = 'not-allowed';
+                card.onclick = null; // Remove click handler
+            });
+        }
     }
 
     // Expose vote function to global scope for HTML onclick
     window.vote = function (team) {
+        if (hasVoted) return;
+
         votes[team]++;
+        hasVoted = true;
+
         localStorage.setItem('vote_' + team, votes[team]);
+        localStorage.setItem('hasVoted', 'true');
 
         updateVoteUI();
 
         // Pop effect
         const card = document.querySelector(`.vote-card.${team}`);
-        card.style.transform = 'scale(0.95)';
-        setTimeout(() => card.style.transform = 'translateY(-10px) scale(1.02)', 100);
+        if (card) {
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => card.style.transform = 'translateY(-10px) scale(1.02)', 100);
+        }
 
         // Mini confetti for vote
         createConfetti(15);
+
+        // Thank you message or feedback could go here
+        alert("Thanks for voting! 🗳️");
     };
 
     // Initialize
