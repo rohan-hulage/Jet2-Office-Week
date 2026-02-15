@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jet2 Office Week | Memories</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-tagline">February 9-13</div>
+        <h1 class="hero-title">Office Week<br><span>Memories</span></h1>
+        <p style="font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; color: var(--text-light);">
+            Five days of collaboration, laughter, and building the future together at Jet2.
+        </p>
+        
+        <div class="scroll-indicator" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to Explore</span>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header">
+            <h2 class="section-title">The Highlights</h2>
+            <p style="color: var(--text-light);">Moments that made the week special.</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Large Item -->
+            <div class="bento-item large">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_lounge_1771171853277.png" alt="Office Lounge" class="bento-img">
+                <div class="bento-overlay">
+                    <h3>The Chill Zone</h3>
+                    <p>Where ideas happened over coffee.</p>
+                </div>
+            </div>
+
+            <!-- Standard Item -->
+            <div class="bento-item">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/team_collaboration_1771171866785.png" alt="Team Work" class="bento-img">
+                <div class="bento-overlay">
+                    <h3>Collaboration</h3>
+                    <p>Brainstorming sessions.</p>
+                </div>
+            </div>
+
+            <!-- Tall Item -->
+            <div class="bento-item tall">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_mural_1771171883442.png" alt="Mural Art" class="bento-img">
+                <div class="bento-overlay">
+                    <h3>Inspiration</h3>
+                    <p>Travel is my life.</p>
+                </div>
+            </div>
+
+             <!-- Placeholder for missing 4th image, reusing one for layout balance -->
+             <div class="bento-item">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/team_collaboration_1771171866785.png" alt="Happy Team" class="bento-img" style="filter: hue-rotate(45deg);">
+                <div class="bento-overlay">
+                    <h3>Team Spirit</h3>
+                    <p>Smiles all around.</p>
+                </div>
+            </div>
+
+            <!-- Wide Item -->
+            <div class="bento-item wide">
+                <img src="/Users/abhishekhulage/.gemini/antigravity/brain/30e3a518-d292-4b83-9646-f1ca14d9d9b7/office_lounge_1771171853277.png" alt="Group Shot" class="bento-img" style="object-position: bottom;">
+                <div class="bento-overlay">
+                    <h3>All Together</h3>
+                    <p>The whole squad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Footer / Highlight Reel Trigger -->
+    <section class="highlights-section">
+        <div class="highlight-bg"></div>
+        <div style="text-align: center; position: relative; z-index: 2;">
+            <h2 class="section-title">Offline is the new Online</h2>
+            <p style="margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                Connecting in person brings a different kind of energy. Here's to many more weeks like this.
+            </p>
+            <button style="
+                background-color: var(--accent-orange);
+                color: white;
+                border: none;
+                padding: 15px 40px;
+                font-size: 1.1rem;
+                border-radius: 30px;
+                cursor: pointer;
+                transition: transform 0.2s;
+                font-weight: 700;
+                box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+            " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                View Full Album <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Jet2 Office Week</h3>
+            <p>Designed with ❤️ by Your AI Assistant</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
