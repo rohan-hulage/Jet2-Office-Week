@@ -63,7 +63,90 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    </section>
+
+    <!-- Voting Section -->
+    <section class="voting-section">
+        <h2 class="section-title">The Great Office Debate</h2>
+        <p>Liverpool vs Manchester. Pick a side.</p>
+
+        <div class="vote-container">
+            <div class="vote-card liverpool" onclick="vote('liverpool')">
+                <div class="vote-icon"><i class="fa-solid fa-guitar"></i></div> <!-- Music/Beatles for Liverpool -->
+                <h3>Liverpool</h3>
+                <div class="vote-count" id="count-liverpool">0</div>
+                <p>votes</p>
+            </div>
+
+            <div class="vote-card manchester" onclick="vote('manchester')">
+                <div class="vote-icon"><i class="fa-solid fa-industry"></i></div> <!-- Industry/Bee for Manchester -->
+                <h3>Manchester</h3>
+                <div class="vote-count" id="count-manchester">0</div>
+                <p>votes</p>
+            </div>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar progress-liverpool" id="bar-liverpool" style="width: 50%"></div>
+            <div class="progress-bar progress-manchester" id="bar-manchester" style="width: 50%"></div>
+        </div>
+    </section>
+
+    <!-- Daily Photos Section -->
+    <section class="daily-section">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Daily Highlights</h2>
+
+        <!-- Day 1 -->
+        <div class="day-container" id="day-1">
+            <div class="day-header">
+                <span class="day-badge">Day 1</span>
+                <h3>Arrival & First Impressions</h3>
+            </div>
+            <div class="day-placeholder">
+                <i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
+                Photos coming soon...
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="day-container" id="day-2">
+            <div class="day-header">
+                <span class="day-badge">Day 2</span>
+                <h3>Work & Workshops</h3>
+            </div>
+            <div class="day-placeholder">
+                <i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
+                Photos coming soon...
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-container" id="day-3">
+            <div class="day-header">
+                <span class="day-badge">Day 3</span>
+                <h3>Team Dinner</h3>
+            </div>
+            <div class="day-placeholder">
+                <i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
+                Photos coming soon...
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-container" id="day-4">
+            <div class="day-header">
+                <span class="day-badge">Day 4</span>
+                <h3>The "Recharge" Outing</h3>
+            </div>
+            <div class="day-placeholder">
+                <i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 10px;"></i><br>
+                Photos coming soon...
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Gallery Section (Remaining Photos) -->
     <section id="gallery" class="gallery-section">
         <div class="section-header">
             <h2 class="section-title">The Highlights</h2>

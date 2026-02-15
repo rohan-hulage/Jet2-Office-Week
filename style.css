@@ -291,6 +291,123 @@ footer {
     }
 }
 
+/* --- Voting Section --- */
+.voting-section {
+    padding: 80px 5%;
+    background-color: white;
+    text-align: center;
+}
+
+.vote-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.vote-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.vote-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.vote-card.liverpool {
+    background: linear-gradient(135deg, #e31b23 0%, #a00e12 100%);
+    /* Liverpool Red */
+}
+
+.vote-card.manchester {
+    background: linear-gradient(135deg, #6CABDD 0%, #1C2C5B 100%);
+    /* City Blue / United Red (Using City Blue for contrast as per prompt suggestion) */
+}
+
+/* If user meant Man United, we'd need red vs red, so Blue/Red contrast is safer for now unless specified */
+
+.vote-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.vote-count {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    margin: 40px auto 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.progress-liverpool {
+    background-color: #e31b23;
+}
+
+.progress-manchester {
+    background-color: #6CABDD;
+}
+
+/* --- Daily Photos --- */
+.daily-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.day-container {
+    margin-bottom: 80px;
+    opacity: 0.8;
+    /* Dimmed until updated */
+}
+
+.day-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.day-badge {
+    background: var(--text-dark);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.day-placeholder {
+    border: 2px dashed #ccc;
+    border-radius: var(--radius-md);
+    padding: 40px;
+    text-align: center;
+    color: #999;
+}
+
 /* --- Fun Features --- */
 
 /* Photo of the Week Section */

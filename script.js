@@ -86,4 +86,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }, animDuration * 1000);
         }
     }
+
+    // --- Voting Logic ---
+    let votes = {
+        liverpool: parseInt(localStorage.getItem('vote_liverpool')) || 120, // Starting with some example votes for fun
+        manchester: parseInt(localStorage.getItem('vote_manchester')) || 115
+    };
+
+    function updateVoteUI() {
+        // Update text
+        const liverpoolEl = document.getElementById('count-liverpool');
+        const manchesterEl = document.getElementById('count-manchester');
+
+        if (liverpoolEl) liverpoolEl.innerText = votes.liverpool;
+        if (manchesterEl) manchesterEl.innerText = votes.manchester;
+
+        // Update progress bars
+        const total = votes.liverpool + votes.manchester;
+        const liverpoolPct = (votes.liverpool / total) * 100;
+        const manchesterPct = (votes.manchester / total) * 100;
+
+        const barLiverpool = document.getElementById('bar-liverpool');
+        const barManchester = document.getElementById('bar-manchester');
+
+        if (barLiverpool && barManchester) {
+            barLiverpool.style.width = liverpoolPct + '%';
+            barManchester.style.width = manchesterPct + '%';
+        }
+    }
+
+    // Expose vote function to global scope for HTML onclick
+    window.vote = function (team) {
+        votes[team]++;
+        localStorage.setItem('vote_' + team, votes[team]);
+
+        updateVoteUI();
+
+        // Pop effect
+        const card = document.querySelector(`.vote-card.${team}`);
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => card.style.transform = 'translateY(-10px) scale(1.02)', 100);
+
+        // Mini confetti for vote
+        createConfetti(15);
+    };
+
+    // Initialize
+    updateVoteUI();
 });
